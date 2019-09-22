@@ -1,5 +1,6 @@
 <template>
- <div>トップページ</div>
+ <div>トップページ
+ </div>
 </template>
 
 <script>
@@ -10,5 +11,6 @@ export default {
 </script>
 
 <style lang="scss">
-
+  @import './assets/style/global/_reset';
+  @import './assets/style/global/_common';
 </style>
