@@ -5,17 +5,15 @@
       <div class="freeword">
         <ul class="freeword__info">
           <li class="freeword__info__text">
-            案件数
-            <span>7929</span>
+            案件数 <span class="highlight">7929</span> 件
           </li>
           <li class="freeword__info__text">
-            <span>2019/09/25</span>
-            更新
+            <span>2019/09/25</span>更新
           </li>
         </ul>
         <div class="freeword__search">
           <input type="text" class="freeword__search__input" placeholder="例) Java 渋谷">
-          <input type="submit" class="freeword__search__submitBtn">
+          <input type="submit" class="freeword__search__submitBtn" value>
         </div>
       </div>
     </form>
@@ -51,8 +49,69 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/style/global/_color';
+@import '../assets/style/global/_border';
 
+.freeword {
+  padding: 12px 12px 24px;
+  background-color: #fff;
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 4px;
+    font-size: 0.875rem;
+    span {
+      font-weight: bold;
+    }
+  }
+  &__search {
+    position: relative;
+    &__input {
+      width: 100%;
+      height: 46px;
+      padding: 0 12px;
+      border: $main_border;
+      border-radius: 4px;
+      box-shadow: 0 0 6px $boxShadow;
+      font-size: 0.875rem;
+    }
+    &__submitBtn {
+      position: absolute; 
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 46px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-left: $main_border;
+      border-radius: 0 3px 3px 0;
+      background: no-repeat;
+      background-color: $main;
+      background-image: url(../assets/style/loupe.svg);
+      background-position: center;
+      background-size: 70%;
+    }
+  }
+}
 
+.recommendedWords {
+  padding-bottom: 20px;
+  &__ttl {
+    padding: 0 12px;
+    font-size: 0.875rem;
+  }
+  &__scrollArea {
+    overflow: auto;
+  }
+}
+
+.wordlist {
+  display: flex;
+  flex-wrap: wrap;
+  width: 750px;
+}
 
 .hoge {
   color: red;

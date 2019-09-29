@@ -19,12 +19,30 @@ export default {
 <style lang="scss">
 @import './assets/style/global/_reset';
 @import './assets/style/global/_common';
+@import './assets/style/global/_color';
+@import './assets/style/global/_border';
+
 
 .contentTtl {
+  position: relative;
   padding: 5px 0 5px 32px;
   font-size: 0.875rem;
   font-weight: bold;
   color: #fff;
-  background-color: #37789b;
+  background-color: $main;
+  /* &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./assets/style/loupe.svg);
+    object-fit: contain;
+  } */
+}
+
+.highlight {
+  font-size: 1.25rem;
+  color: $highlight;
 }
 </style>
