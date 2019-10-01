@@ -22,22 +22,52 @@
       <div class="recommendedWords__scrollArea">
         <ul class="wordlist">
           <li class="wordlist__item">
-            <a href=# class="wordlist__item__link">Java</a>
-            <a href=# class="wordlist__item__link">PHP</a>
-            <a href=# class="wordlist__item__link">Python</a>
-            <a href=# class="wordlist__item__link">JavaScript</a>
-            <a href=# class="wordlist__item__link">フロントエンド</a>
-            <a href=# class="wordlist__item__link">インフラ</a>
-            <a href=# class="wordlist__item__link">Ruby</a>
-            <a href=# class="wordlist__item__link">HTML5</a>
-            <a href=# class="wordlist__item__link">月80万円以上</a>
-            <a href=# class="wordlist__item__link">大阪</a>
-            <a href=# class="wordlist__item__link">福岡</a>
-            <a href=# class="wordlist__item__link">サーバー</a>
-            <a href=# class="wordlist__item__link">Andorid</a>
-            <a href=# class="wordlist__item__link">c#</a>
-            <a href=# class="wordlist__item__link">プログラマー</a>
-            <a href=# class="wordlist__item__link">SQL</a>
+            <a href=# class="wordlist__item__link wordlist__item__link--code">Java</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">PHP</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">Python</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">JavaScript</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--laptop">フロントエンド</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--employee">インフラ</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">Ruby</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">HTML5</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--yenMark">月80万円以上</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--mapPointer">大阪</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--mapPointer">福岡</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--server">サーバー</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--mobile">Andorid</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">c#</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--employee">プログラマー</a>
+          </li>
+          <li class="wordlist__item">
+            <a href=# class="wordlist__item__link wordlist__item__link--code">SQL</a>
           </li>
         </ul>
       </div>
@@ -51,6 +81,20 @@
 <style lang="scss" scoped>
 @import '../assets/style/global/_color';
 @import '../assets/style/global/_border';
+
+.contentTtl__search {
+  position: relative;
+  &::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../assets/style/svgs/iconSearch.svg) left center no-repeat;
+  background-size: 12px;
+  }
+}
 
 .freeword {
   padding: 12px 12px 24px;
@@ -87,11 +131,8 @@
       border: none;
       border-left: $main_border;
       border-radius: 0 3px 3px 0;
-      background: no-repeat;
-      background-color: $main;
-      background-image: url(../assets/style/loupe.svg);
-      background-position: center;
-      background-size: 70%;
+      background: $main url(../assets/style/svgs/loupe.svg) 50% no-repeat;
+      background-size: 30px;
     }
   }
 }
@@ -111,9 +152,40 @@
   display: flex;
   flex-wrap: wrap;
   width: 750px;
-}
+  margin: 4px 8px;
+  &__item {
+    display: block;
+    margin: 3px;
+    &__link {
+      position: relative;
+      display: block;
+      padding: 8px 10px 8px 30px;
+      border-radius: 2px;
+      color: $mainFont;
+      font-size: 0.75rem;
+      &--code {
+        background: $background url(../assets/style/svgs/Java.svg) 10px 50% no-repeat;
+      }
+      &--laptop {
+        background: $background url(../assets/style/svgs/laptop.svg) 10px 50% no-repeat;
+      }
+      &--employee {
+        background: $background url(../assets/style/svgs/employee.svg) 10px 50% no-repeat;
+      }
+      &--yenMark {
+        background: $background url(../assets/style/svgs/yenMark.svg) 10px 50% no-repeat;
+      }
+      &--mapPointer {
+        background: $background url(../assets/style/svgs/mapPointer.svg) 10px 50% no-repeat;
+      }
+      &--server {
+        background: $background url(../assets/style/svgs/server.svg) 10px 50% no-repeat;
+      }
+      &--mobile {
+        background: $background url(../assets/style/svgs/mobile.svg) 10px 50% no-repeat;
+      }
 
-.hoge {
-  color: red;
+    }
+  }
 }
 </style>

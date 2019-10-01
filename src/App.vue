@@ -1,16 +1,19 @@
 <template>
   <div>
     <searchArea/>
+    <newProject/>
    </div>
 </template>
 
 <script>
 import searchArea from "@/components/searchArea";
+import newProject from "@/components/newProject";
 /* import searchArea from "@/components/searchArea";*/
 export default {
   name: 'app',
   components: {
     searchArea,
+    newProject,
     /* serchArea,*/
   },
 }
