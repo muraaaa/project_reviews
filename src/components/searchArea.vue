@@ -82,18 +82,9 @@
 @import '../assets/style/global/_color';
 @import '../assets/style/global/_border';
 
-.contentTtl__search {
-  position: relative;
-  &::after {
-  content: '';
-  position: absolute;
+.contentTtl__search::before {
   top: 7px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url(../assets/style/svgs/iconSearch.svg) left center no-repeat;
   background-size: 12px;
-  }
 }
 
 .freeword {

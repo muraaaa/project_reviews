@@ -33,15 +33,17 @@ export default {
   font-weight: bold;
   color: #fff;
   background-color: $main;
-  /* &::before {
+  &::before {
     content: '';
     display: inline-block;
     position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url(./assets/style/loupe.svg);
-    object-fit: contain;
-  } */
+    top: 5px;
+    left: 12px;
+    width: 20px;
+    height: 20px;
+    background: url(./assets/style/pngs/icoSearch.png) left center no-repeat;
+    background-size: 14px;
+  }
 }
 
 .highlight {
