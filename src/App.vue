@@ -1,20 +1,36 @@
 <template>
   <div>
-    <searchArea/>
-    <newProject/>
+    <!-- 読み込んだ時に呼び出すコンポーネントを区別している -->
+    <template v-if="mediaSP">
+      <searchArea />
+      <newProject />
+    </template>
+    <template v-else>
+      <searchAreaPC />
+      <newProject />
+      <searchProjectByCategory />
+    </template>
    </div>
 </template>
 
 <script>
 import searchArea from "@/components/searchArea";
+import searchAreaPC from "@/components/searchAreaPC";
 import newProject from "@/components/newProject";
-/* import searchArea from "@/components/searchArea";*/
+import searchProjectByCategory from "@/components/searchProjectByCategory";
 export default {
   name: 'app',
+  data() {
+    return {
+      // 読み込んだ時にSP幅かどうかの判定
+      mediaSP: window.innerWidth <= 480,
+    }
+  },
   components: {
     searchArea,
+    searchAreaPC,
     newProject,
-    /* serchArea,*/
+    searchProjectByCategory
   },
 }
 </script>
