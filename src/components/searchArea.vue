@@ -85,7 +85,7 @@
 .contentTtl__search::before {
   top: 7px;
   background-size: 12px;
-}
+} 
 
 .freeword {
   padding: 12px 12px 24px;
@@ -155,7 +155,7 @@
       color: $mainFont;
       font-size: 0.75rem;
       &--code {
-        background: $background url(../assets/style/svgs/Java.svg) 10px 50% no-repeat;
+        background: $background url(../assets/style/svgs/codeBlack.svg) 10px 50% no-repeat;
       }
       &--laptop {
         background: $background url(../assets/style/svgs/laptop.svg) 10px 50% no-repeat;

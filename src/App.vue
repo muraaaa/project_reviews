@@ -62,6 +62,19 @@ export default {
   }
 }
 
+.contentTtlPc {
+  padding: 10px 0;
+  margin: 20px auto;
+  text-align: center;
+  &__main {
+    font-size: 1.75rem;
+  }
+  &__sub {
+    color: $main;
+    font-size: 0.625rem;
+  }
+}
+
 .highlight {
   font-size: 1.25rem;
   color: $highlight;
