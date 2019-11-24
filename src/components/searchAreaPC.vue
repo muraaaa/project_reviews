@@ -1,8 +1,9 @@
 <template>
   <section class="searchArea">
-    <section class="contentTtlPc">
-      <p class="contentTtlPc__main">案件を探す</p>
-      <p class="contentTtlPc__sub">Search</p>
+    <section class="contentTtlPcWithPic">
+      <img src="../assets/style/svgs/search.svg" class="contentTtlPcWithPic__pic">
+      <p class="contentTtlPcWithPic__main">案件を探す</p>
+      <p class="contentTtlPcWithPic__sub">Search</p>
     </section>
     <section class="search">
       <form action="#" id="ProjectSearchIndexFormPc">
@@ -36,7 +37,7 @@
         </div>
       </form>
       <div class="recommendedWords">
-        <p class="recommendedWords__ttl">オススメワード</p>
+        <p class="recommendedWords__ttl">オススメワード:</p>
         <div class="recommendedWords__scrollArea">
           <ul class="wordlist">
             <li class="wordlist__item">
@@ -100,14 +101,14 @@
 <style lang="scss" scoped>
 @import '../assets/style/global/_color';
 @import '../assets/style/global/_border';
+@import '../assets/style/global/_sectionDefault';
 
 // transition timeの設定を忘れない
 
-.search {
-  width: 900px;
-  padding: 20px 0;
-  margin: 0 auto;
+.searchArea {
+  @extend %sectionDefault;
 }
+
 %border {
   border: $main_border;
   border-radius: 4px;
@@ -158,7 +159,10 @@
     }
     &__submitBtn {
       width: 110px;
-      background-color: $main;
+      @extend %border;
+      @extend %borderFocus;
+      background: $main url(../assets/style/svgs/loupe.svg) 50% no-repeat;
+      background-size: 40px;
     }
   }
 }
@@ -229,10 +233,43 @@
 }
 
 .pulldown {
+  display: block;
   &__header {   
     &__language {
       // background: url();
       color: $main;
+    }
+  }
+}
+
+.recommendedWords {
+  display: flex;
+  margin: 20px 0;
+  &__ttl {
+    margin-top: 1px;
+    font-size: 0.875rem;
+    line-height: 28px;
+  }
+  &__scrollArea {
+    max-width: 660px;
+    margin-left: 5px;
+    line-height: 28px;
+  }
+}
+
+.wordlist {
+  display: flex;
+  flex-wrap: wrap;
+  &__item {
+    flex: 1 0 auto;
+    margin: 0 3px 7px;
+    border-radius: 4px;
+    background-color: $background;
+    text-align: center;
+    &__link {
+      padding: 0 15px;
+      color: $mainFont;
+      font-size: 0.875rem;
     }
   }
 }

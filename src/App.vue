@@ -7,8 +7,8 @@
     </template>
     <template v-else>
       <searchAreaPC />
-      <newProject />
-      <searchProjectByCategory />
+      <searchProjectByCategory/>
+      <newProjectPC />
     </template>
    </div>
 </template>
@@ -17,6 +17,7 @@
 import searchArea from "@/components/searchArea";
 import searchAreaPC from "@/components/searchAreaPC";
 import newProject from "@/components/newProject";
+import newProjectPC from "@/components/newProjectPC";
 import searchProjectByCategory from "@/components/searchProjectByCategory";
 export default {
   name: 'app',
@@ -30,6 +31,7 @@ export default {
     searchArea,
     searchAreaPC,
     newProject,
+    newProjectPC,
     searchProjectByCategory
   },
 }
@@ -62,21 +64,57 @@ export default {
   }
 }
 
-.contentTtlPc {
+.contentTtlPcWithPic {
   padding: 10px 0;
   margin: 20px auto;
   text-align: center;
+  &__pic {
+    width: 25px;
+    height: 25px;
+  }
   &__main {
     font-size: 1.75rem;
   }
   &__sub {
     color: $main;
     font-size: 0.625rem;
+    font-weight: bold;
   }
 }
+
+.contentTtlPcWithoutPic {
+  position: relative;
+  padding-left: 20px;
+  margin: 10px 0;
+  line-height: 1.3;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 6px;
+    height: 100%;
+    background-color: $main;
+  }
+  &::after {
+    @extend .contentTtlPcWithoutPic::before;
+    height: 30%;
+    background-color: #ccc;
+  }
+  &__sub {
+    color: $main;
+    font-size: 0.625rem;
+  }
+  &__main{ 
+    font-size: 1.25rem;
+  }
+}
+
 
 .highlight {
   font-size: 1.25rem;
   color: $highlight;
 }
+
 </style>
