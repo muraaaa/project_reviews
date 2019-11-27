@@ -16,6 +16,26 @@
           <div class="freewordPc__search">
             <input type="text" class="freewordPc__search__input" placeholder="職種、ツール、仕事内容など">
             <div class="searchBar">
+              <input type="text" id="label1" class="searchBar__language" placeholder="言語" readonly>
+              <div class="searchBar__language--click pulldown">
+                <div class="pulldown__header">
+                  <p class="pulldown__header__ttl headerLanguage">
+                    <span>言語</span>
+                    を選択
+                  </p>
+                </div>
+              </div>
+              <input type="text" id="label2" class="searchBar__region" placeholder="エリア" readonly>
+              <div class="searchBar__region--click pulldown">
+                <div class="pulldown__header">
+                  <p class="pulldown__header__ttl headerRegion">
+                    <span>エリア</span>
+                    を選択
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="searchBar">
               <input type="checkbox" id="label1" class="searchBar__input">
               <label for="label1" class="searchBar__language">language</label>
               <div class="searchBar__language--click pulldown">
@@ -31,7 +51,7 @@
               <div class="searchBar__region--click">
                 <p>bbb</p>
               </div>
-            </div>
+            </div> -->
             <input type="submit" class="freewordPc__search__submitBtn" value>
           </div>
         </div>
@@ -172,14 +192,6 @@
   flex-wrap: wrap;
   &__input {
     display: none;
-    &:checked + .searchBar__language,
-    &:checked + .searchBar__region {
-      @extend %borderFocus;
-    }
-    &:checked + .searchBar__language + .searchBar__language--click, 
-    &:checked + .searchBar__region + .searchBar__region--click {
-      visibility: visible;
-    }
   }
   &__language {
     position: relative;
@@ -190,6 +202,7 @@
     background-image: url(../assets/style/svgs/codeGray.svg);
     background-size: 25px;
     color: #999;
+    font-size: 0.875rem;
     &::after {
       content: url(../assets/style/svgs/arrow.svg);
       position: absolute;
@@ -201,6 +214,17 @@
         transform: rotate(180deg);
       }
     }
+    &:focus {
+      @extend %borderFocus;
+      background-image: url(../assets/style/svgs/codeMainColor.svg);
+    }
+    &:focus::placeholder,
+    &:focus::before {
+      color: #333;
+    }
+    &:focus ~ .searchBar__language--click {
+      visibility: visible;
+    }
     &:hover {
       @extend %borderHover;
       color: #333;
@@ -209,6 +233,9 @@
       visibility: hidden;
       position: absolute;
       top: 70px;
+      // sectionの頭に揃える　(900 - (300 + 404 + 110)) / 2
+      left: -343px;
+      width: 900px;
     }
   }
   &__region {
@@ -218,10 +245,18 @@
       @extend %borderHover;
       color: #333;
     }
+    &:focus {
+      @extend %borderFocus;
+    }
+    &:focus ~ .searchBar__region--click {
+      visibility: visible;
+    }
     &--click {
       visibility: hidden;
       position: absolute;
       top: 70px;
+      left: -343px;
+      width: 900px;
     }
   }
   &::before {
@@ -234,11 +269,31 @@
 
 .pulldown {
   display: block;
-  &__header {   
+  height: 100px;
+  @extend %borderHover;
+  z-index: 10;
+  background-color: #ffffff;
+  &__header {
+    padding: 20px 0;
+    margin: 0 16px;
+    border-bottom: 1px solid #d9d9d9;
+    color: $main;
+    &__ttl {
+      padding: 0 0 0 32px;
+      span {
+        font-size: 1.125rem;
+      }
+    }
     &__language {
-      // background: url();
+      background: url();
       color: $main;
     }
+  }
+}
+
+.headerLanguage {
+  &::before {
+    
   }
 }
 
