@@ -9,6 +9,7 @@
       <searchAreaPC />
       <searchProjectByCategory/>
       <newProjectPC />
+      <trialPC2 />
     </template>
    </div>
 </template>
@@ -19,6 +20,7 @@ import searchAreaPC from "@/components/searchAreaPC";
 import newProject from "@/components/newProject";
 import newProjectPC from "@/components/newProjectPC";
 import searchProjectByCategory from "@/components/searchProjectByCategory";
+import trialPC2 from "@/components/trialPC2";
 export default {
   name: 'app',
   data() {
@@ -32,7 +34,8 @@ export default {
     searchAreaPC,
     newProject,
     newProjectPC,
-    searchProjectByCategory
+    searchProjectByCategory,
+    trialPC2,
   },
 }
 </script>
